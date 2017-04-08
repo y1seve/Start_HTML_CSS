@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS BOX test</title>
+    <style type="text/css">
+      body {
+        margin: 0;
+      }
+      
+      #wrapper > * {
+        padding: 20px;
+        font-size: 20px;
+        border: 20px solid rgba(0, 0, 0, 0.5);
+      }
+      
+      #wrapper main {
+        margin: 5%;
+        padding: 5%;
+        border-width: 40px;
+        width: 60%;
+      }
+      
+      #wrapper footer {
+        margin-top: 30px;
+      }
+      
+      p {
+        width  : 400px;
+        height : 2.5em;
+        padding: 1em 1em 1em 1em;
+        border : 1px solid black;
+      }
+
+      .autoscroll { overflow: auto;    }
+      .clipped    { overflow: hidden;  }
+      .default    { overflow: visible; }
+    
+    
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>Header</header>
+      <main>Main Content</main>
+      <footer>Footer</footer>
+    </div>
+    
+    <p class="autoscroll">
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   Mauris tempus turpis id ante mollis dignissim. Nam sed
+   dolor non tortor lacinia lobortis id dapibus nunc. Praesent
+   iaculis tincidunt augue. Integer efficitur sem eget risus
+   cursus, ornare venenatis augue hendrerit. Praesent non elit
+   metus. Morbi vel sodales ligula.
+    </p>
+
+    <p class="clipped">
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   Mauris tempus turpis id ante mollis dignissim. Nam sed
+   dolor non tortor lacinia lobortis id dapibus nunc. Praesent
+   iaculis tincidunt augue. Integer efficitur sem eget risus
+   cursus, ornare venenatis augue hendrerit. Praesent non elit
+   metus. Morbi vel sodales ligula.
+    </p>
+
+    <p class="default">
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   Mauris tempus turpis id ante mollis dignissim. Nam sed
+   dolor non tortor lacinia lobortis id dapibus nunc. Praesent
+   iaculis tincidunt augue. Integer efficitur sem eget risus
+   cursus, ornare venenatis augue hendrerit. Praesent non elit
+   metus. Morbi vel sodales ligula.
+    </p>
+    
+    
+  </body>
+</html>
