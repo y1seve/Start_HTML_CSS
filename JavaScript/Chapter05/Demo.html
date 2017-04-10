@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>闭包 demo</title>
+    <script type="text/javascript">
+      function foo() {
+        var a = 2;
+        
+        function bar() {
+          console.log(a);
+        }
+        
+        bar();
+      }  
+      
+      foo();
+      
+      
+      function foo1() {
+        var a = 2;
+        
+        function bar() {
+          console.log(a);
+        }
+        
+        return bar;
+      }
+      
+      var baz = foo1();
+      baz();  //闭包
+      
+      
+    </script>
+  </head>
+  <body>
+    <p> 闭包demo</p>
+  </body>
+</html>

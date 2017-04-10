@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>提升demo</title>
+    <script type="text/javascript">
+      a = 2;
+      var a;
+      console.log(a);
+      
+      console.log(b);
+      var b = 2;
+      
+      foo();
+      bar();
+      
+      var foo = function bar() {
+        
+      }
+      
+      
+      //函数优先
+      func1();
+      var func1;
+      function func1() {
+        console.log("func1 run");
+      }
+      
+      func1 = function() {
+        console.log("func1 run run");
+      }
+      
+      function func1() {
+        console.log("func1 run run run");
+      }
+      
+      
+    </script>
+  </head>
+  <body>
+    <p>提升demo</p>
+  </body>
+</html>
