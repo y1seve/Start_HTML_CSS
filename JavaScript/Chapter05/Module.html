@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Module Demo</title>
+    <script type="text/javascript">
+//      
+//      function Test() {
+//        var test = "test";
+//        
+//        function CoolModule() {
+//          var something = "cool";
+//          var another = [1, 2, 3];
+//
+//          function doSomething() {
+//            console.log(something);
+//          }
+//
+//          function doAnother() {
+//            console.log(another.join("!"));
+//          }
+//          
+//          function doTest() {
+//            console.log(test);
+//          }
+//
+//          return {
+//            doSomething: doSomething,
+//            doAnother: doAnother,
+//            doTest: doTest
+//          };
+//        }
+//        
+//        return CoolModule();
+//      }
+      
+      function CoolModule() {
+        var something = "cool";
+        var another = [1, 2, 3];
+        
+        function doSomething() {
+          console.log(something);
+        }
+      
+        function doAnother() {
+          console.log(another.join("!"));
+        }
+        
+        return {
+          doSomething: doSomething,
+          doAnother: doAnother
+        };
+      }
+      
+      var foo = CoolModule();
+      foo.doSomething();
+      foo.doAnother();
+//      var foo = Test();
+//      foo.doSomething();
+//      foo.doAnother();
+//      foo.doTest();
+      
+      
+    </script>
+  </head>
+  <body>
+    <p>Module Demo</p>
+  
+  
+  </body>
+</html>
