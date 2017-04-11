@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+    <script type="text/javascript">
+//      function foo() {
+//        var a = 2;
+//        this.bar();
+//      }
+//      
+//      function bar() {
+//        console.log("bar called");
+//        console.log(this.a);
+//      }
+//      
+//      foo();
+      
+      
+      
+//      function foo() {
+//        "use strict";
+//        console.log(this.a);
+//      }
+//      
+//      var a = 2;
+//      
+//      foo();
+      
+      
+//      function foo() {
+//        console.log(this.a);
+//      }
+//      var a = 2;
+//      (function() {
+//        "use strict";
+//        var a = 3;
+//        foo();
+//      })();
+      
+      
+      
+      function foo() {
+        console.log(this.a);
+      }
+      
+      function doFoo(fn) {
+        var a = "aaaa";
+        fn();
+      }
+      
+      var obj = {
+        a: 2,
+        foo: foo
+      }
+      
+      var a = "oops, global";
+      doFoo(obj.foo);
+    
+    </script>
+  </head>
+  <body>
+    <p>test test test</p>
+  </body>
+</html>
