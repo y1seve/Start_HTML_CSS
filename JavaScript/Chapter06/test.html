@@ -39,22 +39,76 @@
       
       
       
-      function foo() {
-        console.log(this.a);
-      }
+//      function foo() {
+//        console.log(this.a);
+//      }
+//      
+//      function doFoo(fn) {
+//        var a = "aaaa";
+//        fn();
+//      }
+//      
+//      var obj = {
+//        a: 2,
+//        foo: foo
+//      }
+//      
+//      var a = "oops, global";
+//      doFoo(obj.foo);
       
-      function doFoo(fn) {
-        var a = "aaaa";
-        fn();
+      
+      
+//      硬绑定
+//      function foo() {
+//        console.log(this.a);
+//      }
+//      
+//      var obj = {
+//        a:2
+//      };
+//      
+//      var bar = function() {
+//        foo.call(obj);
+//      }
+//      
+//      bar(); //2
+//      setTimeout(bar, 100);
+//      
+//      //硬绑定的bar不可能再修改它的this
+//      bar.call(window);
+      
+      
+//      硬绑定的常用场景
+      function foo(something) {
+        console.log(this.a, something);
       }
       
       var obj = {
-        a: 2,
-        foo: foo
+        a:2
+      };
+      
+      var bar = function() {
+        return foo.apply(obj, arguments);
+      };
+      
+      var b = bar(3);  // 2 3
+      console.log(b); //5
+      
+      //简单的辅助绑定函数
+      function bind(fn, obj) {
+        return function() {
+          return fn.apply(obj, arguments);
+        }
       }
       
-      var a = "oops, global";
-      doFoo(obj.foo);
+      var bar1 = bind(foo, obj);
+      var b1 = bar1(3)
+      console.log(b1);
+      
+      //es5 内置硬绑定
+      var bar2 = foo.bind(obj);
+      var b2 = bar2(3);
+      console.log(b2);
     
     </script>
   </head>
