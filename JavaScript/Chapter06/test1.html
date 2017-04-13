@@ -28,26 +28,52 @@
       
 //      比较隐式绑定和new绑定的优先级  --> new绑定 大于 隐式绑定
       
-      function foo(something) {
-        this.a = something;
+//      function foo(something) {
+//        this.a = something;
+//      }
+//      
+//      var obj1 = {
+//        foo: foo
+//      };
+//      
+//      var obj2 = {};
+//      
+//      obj1.foo(2);
+//      console.log(obj1.a); //2
+//      
+//      obj1.foo.call(obj2, 3);
+//      console.log(obj2.a); //3
+//      
+//      var bar = new obj1.foo(4);
+//      console.log(obj1.a); //2
+//      console.log(bar.a); //4
+      
+//      比较硬绑定和new绑定的优先级   new绑定大于硬绑定
+      
+//      function foo(something) {
+//        this.a = something;
+//      }
+//      
+//      var obj1 = {};
+//      
+//      var bar = foo.bind(obj1);
+//      bar(2);
+//      console.log(obj1.a);  //2
+//
+//      var baz = new bar(3);
+//      console.log(obj1.a);  //2
+//      console.log(baz.a);   //3
+      
+      
+      
+//       柯里化
+      function foo(p1, p2) {
+        this.val = p1 + p2;
       }
       
-      var obj1 = {
-        foo: foo
-      };
-      
-      var obj2 = {};
-      
-      obj1.foo(2);
-      console.log(obj1.a); //2
-      
-      obj1.foo.call(obj2, 3);
-      console.log(obj2.a); //3
-      
-      var bar = new obj1.foo(4);
-      console.log(obj1.a); //2
-      console.log(bar.a); //4
-      
+      var bar = foo.bind(null, "p1");
+      var baz = new bar("p2");
+      console.log(baz.val);
       
       
       

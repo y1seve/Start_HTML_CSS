@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>this demo2</title>
+    <script type="text/javascript">
+//      function foo() {
+//        console.log(this.a);
+//      }
+//      var a = 2;
+//      
+//      foo.call(null);
+      
+//      更安全的做法
+      function foo(a, b) {
+        console.log("a:" + a + ", b:" + b);
+      }
+      
+      var Ø = Object.create(null);
+      
+      foo.apply(Ø, [2, 3]);
+      
+//      使用bind(...)进行柯里化
+      var bar = foo.bind(Ø, 2);
+      bar(3);
+      
+      
+      
+    </script>
+  </head>
+  <body>
+    <p>this demo2</p>
+  </body>
+</html>
