@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Object Demo</title>
+    <script type="text/javascript">
+//      var prefix = "foo";
+//      
+//      var myObject = {
+//        [prefix + "bar"]:"hello",
+//        [prefix + "baz"]:"world"
+//      };
+//      
+//      console.log(myObject["foobar"]);
+//      console.log(myObject["foobaz"]);
+//  
+//      //=========================================
+//      
+//      var myObject = {
+//        a:2
+//      }
+//      
+//      myObject.a = 3;
+//      myObject.a;  // 3
+//      
+//      Object.defineProperty(myObject, "a", {
+//        value: 4,
+//        writable: true,
+//        configurable: false, //不可配置
+//        enumerable: true
+//      })
+//      
+//      myObject.a; //4
+//      myObject.a = 5;
+//      myObject.a; //5
+//      
+//      Object.defineProperty(myObject, "a", {
+//        value: 6,
+//        writable: true,
+//        configurable: true,
+//        enumerable: true
+//      });  //TypeError
+//      
+////      -----------------------------------
+//      var myObject = {
+//        a:2
+//      }
+//      
+//      Object.preventExtensions(myObject);
+//      myObject.b = 3;
+//      myObject.b; //undefined
+//      
+//      Object.seal(myObject);  //密封
+//      
+//      Object.freeze(myObject);  //冻结
+      
+//      ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+//      var myObject = {
+//        get a() {
+//          return this._a_;
+//        },
+//        
+//        set a(val) {
+//          this._a_ = val * 2;
+//        }
+//      }
+//      
+//      console.log(myObject.a);
+//      
+//      myObject.a = 3;
+//      
+//      console.log(myObject.a);
+      
+      var myObject = {
+        a: 2
+      }
+      
+      ("a" in myObject);  // true
+      ("b" in myObject);  // false
+      
+      myObject.hasOwnProperty("a");  //true
+      myObject.hasOwnProperty("b");  //false
+      
+      myObject.propertyIsEnumerable("a");  //判断属性是否可以枚举
+      
+    </script>
+  </head>
+  <body>
+    <p>Object Demo</p>
+  </body>
+</html>
