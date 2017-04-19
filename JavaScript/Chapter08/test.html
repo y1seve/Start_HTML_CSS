@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prototype test</title>
+    <script type="text/javascript">
+//      function Foo() {
+//        //..
+//      }
+//      let foo = Foo.prototype;
+//      console.log(foo);
+//      
+//      var a = new Foo();
+//      var is = Object.is(Object.getPrototypeOf(a), Foo.prototype);
+//      console.log(is);
+      
+//      function Foo(name) {
+//        this.name = name;
+//      }
+//      
+//      Foo.prototype.myName = function() {
+//        return this.name;
+//      }
+//      
+//      function Bar(name, label) {
+//        Foo.call(this, name);
+//        this.label = label;
+//      }
+//      
+////      Bar.prototype = Object.create(Foo.prototype);
+//      Object.setPrototypeOf(Bar.prototype, Foo.prototype);
+//      
+//      Bar.prototype.myLabel = function() {
+//        return this.label;
+//      };
+//      
+//      let a = new Bar("a", "obj a");
+//      
+//      console.log(a.myName());
+//      console.log(a.myLabel());
+      
+      
+      
+      
+      //判断o1是否关联到（委托）o2的辅助函数
+//      function isRelatedTo(o1, o2) {
+//        function F() {
+//          
+//        }
+//        F.prototype = o2;
+//        return o1 instanceof F;
+//      }
+//      
+//      var a = {};
+//      var b = Object.create(a);
+//      
+//      let result = isRelatedTo(b, a);
+//      console.log(result）；
+            
+//      
+//      function isRelatedTo(o1, o2) {
+//        return o2.isPrototypeOf(o1);
+//      }
+//      
+//      var a = {};
+//      var b = Object.create(a);
+//      let result = isRelatedTo(b, a);
+//      console.log(result);
+//      let chain = Object.getPrototypeOf(b);
+//      console.log(chain);
+//      
+////      Object.create()的polyfill代码
+//      if (!Object.create) {
+//        Object.create = function(o) {
+//          function F() {}
+//          F.prototype = o;
+//          return new F();
+//        };
+//      }
+      
+      
+      var anotherObject = {
+        cool: function() {
+          console.log("cool!");
+        }
+      };
+      
+      var myObject = Object.create(anotherObject);
+      
+      myObject.doCool = functiond() {
+        this.cool(); //内部委托
+      };
+      
+      myObject.doCool(); // "cool!"
+      
+      
+          
+       
+    </script>
+  </head>
+  <body>
+    <p>Prototype demo</p>
+  </body>
+</html>
