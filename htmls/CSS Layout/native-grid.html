@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Native Grid Demo</title>
+    <style type="text/css">
+      .wrapper {
+        width: 90%;
+        max-width: 960px;
+        margin: 0 auto;
+        display: grid
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 20px;
+      }
+
+      .col {
+        background: rgb(255,150,150);
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="wrapper">
+      <div class="col">1</div>
+      <div class="col">2</div>
+      <div class="col">3</div>
+      <div class="col">4</div>
+      <div class="col">5</div>
+      <div class="col">6</div>
+      <div class="col">7</div>
+      <div class="col">8</div>
+      <div class="col">9</div>
+      <div class="col">10</div>
+      <div class="col">11</div>
+      <div class="col">12</div>
+      <div class="col">13</div>
+      <div class="col span6">14</div>
+      <div class="col span3">15</div>
+      <div class="col span2">16</div>       
+    </div>
+  </body>
+  
+  
+</html>
