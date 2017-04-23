@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>manipulating elements demo</title>
+  </head>
+  <body>
+    <h1>hello jQuery!</h1>
+    <div id="myDiv">
+      <p>content 0</p>
+      <p>content 1</p>
+      <p>content 2</p>
+      <p>content 3</p>
+      <p>content 4</p>
+    </div>
+    
+    <ol id="myList">
+      <li>list 1 </li>
+      <li>list 2 </li>
+      <li>list 3 </li>
+      <li>list 4 </li>
+    </ol>
+
+    <script src="jquery.js"></script>
+    <script>
+      $(function() {
+        $("#myDiv p:first").text("New <strong>first</strong> para");
+        
+        let li = $("#myList li:first").clone().appendTo("#myList");
+        
+//        $("#myList").append($("#myList li:first"));
+        
+        
+        var myNewElement = $("<P>new element p</p>");
+        myNewElement.appendTo("#myDiv");
+        myNewElement.insertAfter("ol:last");
+        $("li").first().after(myNewElement.clone());
+        $("ol").append("<li>list item</li>");
+        
+        var myItems = [];
+        var myList = $("#myList");
+        for (var i = 0; i < 100; i++) {
+          myItems.push("<li>item" + i + "</li>");
+        }
+        myList.append(myItems.join(""));
+      });
+    </script>
+  </body>
+</html>

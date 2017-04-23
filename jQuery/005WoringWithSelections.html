@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>working with selections demo</title>
+  </head>
+  <body>
+    <h1>hello jQuery!</h1>
+    <div id="content">
+      <h2>h2 content</h2>
+      <h3>content 0</h3>
+      <h3>content 1</h3>
+      <h3>content 2</h3>
+      <h3>content 3</h3>
+      <h3>content 4</h3>
+    </div>
+
+    <script src="jquery.js"></script>
+    <script>
+      $(function() {
+        $("h1").html("hello, world!");
+        let content = $("h1").html();
+        console.log("content = " + content);
+//        $("#content").find("h3").eq(2).html("new text for thrid h3");
+        $("#content")
+          .find("h3")
+          .eq(2)
+            .html("new text for the third h3!")
+            .end()
+          .eq(0)
+            .html("new text for the first h3!");
+      });
+    </script>
+  </body>
+</html>
